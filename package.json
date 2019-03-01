@@ -1,0 +1,43 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "Using Redux",
+  "main": "public/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaitu843/TodoApp.git"
+  },
+  "keywords": [
+    "Redux",
+    "Store",
+    "CombineReducers"
+  ],
+  "author": "Chaitu Reddy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaitu843/TodoApp/issues"
+  },
+  "homepage": "https://github.com/chaitu843/TodoApp#readme",
+  "dependencies": {
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.3.1",
+    "redux": "^4.0.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "uniqid": "^5.0.3",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4"
+  }
+}
