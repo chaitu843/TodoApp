@@ -9,7 +9,7 @@ import { createStore } from 'redux';
 import uniqid from 'uniqid';
 import $ from 'jquery';
 
-import markUp from './html';
+import markUp from './markUp';
 
 
 let currentState = {
