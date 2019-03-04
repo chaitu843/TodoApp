@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TODO</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Navbar</span>
+    <form class="form-inline addTask">
+      <input class="form-control mr-sm-2 task" type="search" placeholder="Log your task" aria-label="Log your task">
+      <button class="btn btn-light btn-outline-success my-2 my-sm-0" type="submit">Add</button>
+    </form>
+  </nav>
+  <select class="filterDropdown">
+    <option value="SHOW_ALL">SHOW ALL</option>
+    <option value="SHOW_COMPLETED">SHOW COMPLETED</option>
+    <option value="SHOW_PENDING">SHOW PENDING</option>
+  </select>
+  <div class="todos my-5">
+    <div class="card todo">
+      <div class="card-header bg-dark text-light text-center">
+        ToDo..!!!
+      </div>
+      <ul class="list-group list-group-flush todo-list"></ul>
+    </div>
+  </div>
+</body>
+
+</html>

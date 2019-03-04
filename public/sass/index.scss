@@ -1,0 +1,35 @@
+.filterDropdown{
+    float: right;
+    width: 15%;
+    color: red;
+    background-color: aliceblue;
+    font-size: 13px;
+    font-family: serif;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.todos{
+    display: flex;
+    justify-content: space-around;
+    .todo{
+        width: 20%;
+    }
+}
+
+
+.text{
+    font-weight: 500;
+    font-variant: small-caps;
+}
+
+.completed{
+    text-decoration: line-through;
+}
+
+.delete{
+    float: right;
+    font-size: 20px;
+    color: red;
+}
