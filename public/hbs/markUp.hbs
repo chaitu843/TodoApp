@@ -1,30 +1,35 @@
 {{#if this.todos.length}}
-    
-    {{#if this.visibilityFilter equals "SHOW_ALL"}}
-        {{#each this.todos}}
-            {{#if completed}}
-                {{> completedListItem}}
-            {{else}}
-                {{> pendingListItem}}
-            {{/if}}
-        {{/each}}
-    {{/if}}
+    {{#equals this.visibilityFilter "SHOW_ALL"}}
+        {{#with ..}}
+            {{#each this.todos}}
+                {{#if completed}}
+                    {{> completedListItem}}
+                {{else}}
+                    {{> pendingListItem}}
+                {{/if}}
+            {{/each}}
+        {{/with}}
+    {{/equals}}
 
-    {{#if this.visibilityFilter equals "SHOW_COMPLETED"}}
-        {{#each this.todos}}
-            {{#if completed}}
-                {{> completedListItem}}
-            {{/if}}
-        {{/each}}
-    {{/if}}
+    {{#equals this.visibilityFilter "SHOW_COMPLETED"}}
+        {{#with ..}}
+            {{#each this.todos}}
+                {{#if completed}}
+                    {{> completedListItem}}
+                {{/if}}
+            {{/each}}
+        {{/with}}
+    {{/equals}}
 
-     {{#if this.visibilityFilter equals "SHOW_COMPLETED"}}
-        {{#each this.todos}}
-            {{#unless completed}}
-                {{> pendingListItem}}
-            {{/unless}}
-        {{/each}}
-    {{/if}}
+    {{#equals this.visibilityFilter "SHOW_PENDING"}}
+        {{#with ..}}
+            {{#each this.todos}}
+                {{#unless completed}}
+                    {{> pendingListItem}}
+                {{/unless}}
+            {{/each}}
+        {{/with}}
+    {{/equals}}
 
 {{else}}
     {{> nothingToShow}}

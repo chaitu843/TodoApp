@@ -1,4 +1,7 @@
-let currentState = JSON.parse(localStorage.getItem("state"));
+let currentState = {
+    ...JSON.parse(localStorage.getItem("state")),
+    "visibilityFilter" : "SHOW_ALL"
+}
 
 if(currentState===null){
     currentState = {

@@ -11,7 +11,7 @@ import todoApp from './reducers';
 
 import $ from 'jquery';
 
-import markUp from './markUp';
+import markUp from '../hbs/markUp.hbs';
 
 
 let store = createStore(todoApp);
@@ -53,6 +53,7 @@ $('.filterDropdown').on('change', (e) => {
 
 store.subscribe(() => {
     let currentState = store.getState();
+    console.log(currentState);
     localStorage.setItem("state",JSON.stringify(currentState))
     let html = markUp(currentState);
 
@@ -63,6 +64,8 @@ $('.todo-list').html(markUp({
     ...store.getState(),
     "visibilityFilter": "SHOW_ALL"
 }));
+
+console.log(store.getState())
 
 // Now dispatch actions on adding and toggling
 // Next filter dropdown
