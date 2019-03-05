@@ -6,59 +6,13 @@ import "../../node_modules/bootstrap/scss/bootstrap.scss";                      
 import "../sass/index.scss";
 
 import { createStore } from 'redux';
-import uniqid from 'uniqid';
+
+import todoApp from './reducers';
+
 import $ from 'jquery';
 
 import markUp from './markUp';
 
-
-let currentState = {
-    visibilityFilter: "SHOW_ALL",
-    todos: []
-}
-
-
-let todoApp = (state = currentState, action) => {
-    switch (action.type) {
-        case "ADD_TODO":
-            let date = new Date();
-            return {
-                visibilityFilter: state.visibilityFilter,
-                todos: [...state.todos,
-                {
-                    id: uniqid(),
-                    completed: false,
-                    text: action.text,
-                    date: date.toDateString().substring(4),
-                    time: date.toTimeString().substring(0, 5),
-                }
-                ]
-            }
-        case "TOGGLE_TODO":
-            return {
-                visibilityFilter: state.visibilityFilter,
-                todos: state.todos.map((todo) => {
-                    if (action.id === todo.id) return {
-                        ...todo,
-                        completed: !todo.completed
-                    }
-                    return todo;
-                })
-            }
-        case "DELETE_TODO":
-            return {
-                visibilityFilter: state.visibilityFilter,
-                todos: state.todos.filter(todo => !(todo.id === action.id)),
-            };
-        case "SET_VISIBILITY_FILTER":
-            return {
-                visibilityFilter: action.filter,
-                todos: state.todos
-            }
-        default:
-            return state;
-    }
-}
 
 let store = createStore(todoApp);
 
@@ -117,7 +71,6 @@ if (state.todos.length === 0) {
 }
 
 $('.todo-list').html(html);
-
 
 // Now dispatch actions on adding and toggling
 // Next filter dropdown

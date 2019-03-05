@@ -13,6 +13,11 @@ Building a todo app using Redux
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
+1. Using CombineReducers
+2. Separate Reducer for todos and separted reducer for visibilityFilter
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
 1. Usage of templating Engine along with Redux
 2. markUp.js is being replaced by markUp.hbs and hence, using handlebars-loader
 
