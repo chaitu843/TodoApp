@@ -1,10 +1,7 @@
 import {combineReducers} from 'redux'
 import uniqid from 'uniqid';
+import currentState from './state';
 
-let currentState = {
-    visibilityFilter: "SHOW_ALL",
-    todos: []
-}                                             // State Tree
 
 let todos = (state = currentState.todos, action) => {
     switch (action.type) {
@@ -23,7 +20,7 @@ let todos = (state = currentState.todos, action) => {
             return state.map((todo) => {
                     if (action.id === todo.id) return {
                         ...todo,
-                        completed: !todo.completed
+                        completed: !(todo.completed)
                     }
                     return todo;
                 })

@@ -8,13 +8,14 @@ Building a todo app using Redux
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-1. Persisting Redux Store
-2. json-server is being used
+1. Using CombineReducers
+2. Separate Reducer for todos and separted reducer for visibilityFilter
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-1. Using CombineReducers
-2. Separate Reducer for todos and separted reducer for visibilityFilter
+1. Persisting Redux Store
+2. Tried to use json-server but applications becoming more complicated because of the async operations.
+3. So implemented data persistancy using local storage.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 

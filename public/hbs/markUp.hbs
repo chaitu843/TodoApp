@@ -1,0 +1,31 @@
+{{#if this.todos.length}}
+    
+    {{#if this.visibilityFilter equals "SHOW_ALL"}}
+        {{#each this.todos}}
+            {{#if completed}}
+                {{> completedListItem}}
+            {{else}}
+                {{> pendingListItem}}
+            {{/if}}
+        {{/each}}
+    {{/if}}
+
+    {{#if this.visibilityFilter equals "SHOW_COMPLETED"}}
+        {{#each this.todos}}
+            {{#if completed}}
+                {{> completedListItem}}
+            {{/if}}
+        {{/each}}
+    {{/if}}
+
+     {{#if this.visibilityFilter equals "SHOW_COMPLETED"}}
+        {{#each this.todos}}
+            {{#unless completed}}
+                {{> pendingListItem}}
+            {{/unless}}
+        {{/each}}
+    {{/if}}
+
+{{else}}
+    {{> nothingToShow}}
+{{/if}}

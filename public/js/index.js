@@ -40,7 +40,7 @@ $('.todo-list').on('click', '.delete', (e) => {
     store.dispatch({
         type: "DELETE_TODO",
         id: id,
-    })
+    });
 })
 
 $('.filterDropdown').on('change', (e) => {
@@ -52,25 +52,17 @@ $('.filterDropdown').on('change', (e) => {
 })
 
 store.subscribe(() => {
-    let html = markUp(store.getState());
+    let currentState = store.getState();
+    localStorage.setItem("state",JSON.stringify(currentState))
+    let html = markUp(currentState);
 
     $('.todo-list').html(html);
 })
 
-let state = store.getState(), html = ``;
-
-if (state.todos.length === 0) {
-    html += `<li class="list-group-item text" style="color:red;">Nothing to Show..!!!</li>`
-} else {
-    state.todos.forEach(todo => {
-        if (!todo.completed) html += `<li class="list-group-item text" id="${todo.id}" >${todo.text}</li>`
-        else {
-            html += `<li class="list-group-item text completed" id="${todo.id}">${todo.text}</li>`
-        }
-    });
-}
-
-$('.todo-list').html(html);
+$('.todo-list').html(markUp({
+    ...store.getState(),
+    "visibilityFilter": "SHOW_ALL"
+}));
 
 // Now dispatch actions on adding and toggling
 // Next filter dropdown
