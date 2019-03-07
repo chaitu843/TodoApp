@@ -3,7 +3,7 @@ let currentState = {
     "visibilityFilter" : "SHOW_ALL"
 }
 
-if(currentState===null){
+if(!currentState.hasOwnProperty('todos')){
     currentState = {
         visibilityFilter: "SHOW_ALL",
         todos: []
